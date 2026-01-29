@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronDown, Rocket, Download } from "lucide-react";
-import profileImage from "@/assets/pitendra-profile.png";
+import profileImage from "@/assets/pitendra-profile-transparent.png";
 
 export const HeroSection = () => {
   return (
@@ -30,12 +30,12 @@ export const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-40 animate-pulse" />
+            <div className="relative inline-block group cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300 animate-pulse" />
               <img
                 src={profileImage}
                 alt="Pitendra Kumar Sahoo"
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+                className="relative w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover border-4 border-primary/40 shadow-2xl transition-transform duration-300 group-hover:scale-105 group-hover:border-primary/60"
               />
             </div>
           </motion.div>

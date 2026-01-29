@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, GraduationCap, Calendar, Award } from "lucide-react";
+import profileImage from "@/assets/pitendra-profile-transparent.png";
 
 export const AboutSection = () => {
   const ref = useRef(null);
@@ -29,12 +30,30 @@ export const AboutSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Info */}
+        <div className="grid lg:grid-cols-3 gap-12 items-center">
+          {/* Left - Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
+              <img
+                src={profileImage}
+                alt="Pitendra Kumar Sahoo"
+                className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl object-cover border-4 border-primary/30 shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:border-primary/50"
+              />
+            </div>
+          </motion.div>
+
+          {/* Middle - Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2"
           >
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               I am a first-year B.Tech CSE student at GIET University Gunupur, passionate about 
@@ -90,12 +109,12 @@ export const AboutSection = () => {
             </div>
           </motion.div>
 
-          {/* Right - Stats */}
+          {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:col-span-3"
           >
             {stats.map((stat, index) => (
               <div
