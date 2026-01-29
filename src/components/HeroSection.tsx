@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronDown, Rocket, Download } from "lucide-react";
+import profileImage from "@/assets/pitendra-profile.png";
 
 export const HeroSection = () => {
   return (
@@ -22,11 +23,28 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <div className="relative inline-block">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-40 animate-pulse" />
+              <img
+                src={profileImage}
+                alt="Pitendra Kumar Sahoo"
+                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+              />
+            </div>
+          </motion.div>
+
           {/* NASA Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
           >
             <Rocket className="w-4 h-4 text-primary" />
