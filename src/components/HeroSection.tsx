@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronDown, Rocket } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Rocket, Download } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -69,6 +69,14 @@ export const HeroSection = () => {
               className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover-lift glow-primary"
             >
               View My Work
+            </a>
+            <a
+              href="/Pitendra_Kumar_Sahoo_CV.pdf"
+              download="Pitendra_Kumar_Sahoo_CV.pdf"
+              className="px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              Download CV
             </a>
             <a
               href="#contact"
