@@ -7,7 +7,7 @@ const projects = [
     title: "ResumeAI",
     description: "AI-powered web application that helps users instantly generate professional, ATS-friendly resumes with multiple templates and A4 PDF export. Built with Next.js & React.",
     tech: ["Next.js", "React", "Tailwind CSS", "AI", "PDF Generation"],
-    liveUrl: "https://resume-ai-demo.vercel.app",
+    liveUrl: "https://lnkd.in/gZzqTQXq",
     githubUrl: "https://github.com/PitendraKumarsahoo/studio",
     icon: Sparkles,
     featured: true,
