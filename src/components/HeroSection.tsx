@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronDown, Rocket, Download, Star, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Rocket, Download, Star, ArrowRight, Eye } from "lucide-react";
 import { FloatingElements } from "./FloatingElements";
 
 export const HeroSection = () => {
@@ -149,8 +149,17 @@ export const HeroSection = () => {
             </a>
             <a
               href="/Pitendra_Kumar_Sahoo_CV.pdf"
-              download="Pitendra_Kumar_Sahoo_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center gap-2 gradient-border"
+            >
+              <Eye className="w-4 h-4" />
+              View Resume
+            </a>
+            <a
+              href="/Pitendra_Kumar_Sahoo_CV.pdf"
+              download="Pitendra_Kumar_Sahoo_CV.pdf"
+              className="px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center gap-2"
             >
               <Download className="w-4 h-4" />
               Download CV
