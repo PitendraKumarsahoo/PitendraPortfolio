@@ -36,7 +36,7 @@ export const Footer = () => {
               <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
             </a>
             <a
-              href="mailto:contact@pitendra.dev"
+              href="mailto:sahoopitendrakumar@gmail.com"
               className="p-2 rounded-lg hover:bg-secondary transition-colors"
             >
               <Mail className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />

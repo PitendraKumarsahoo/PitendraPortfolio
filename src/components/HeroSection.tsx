@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronDown, Rocket, Download, Star, ArrowRight, Eye } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Rocket, Star, ArrowRight, Eye } from "lucide-react";
 import { FloatingElements } from "./FloatingElements";
 
 export const HeroSection = () => {
@@ -138,11 +138,11 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+            className="grid grid-cols-2 sm:flex sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 max-w-md sm:max-w-none mx-auto"
           >
             <a
               href="#projects"
-              className="group px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover-lift glow-primary inline-flex items-center gap-2"
+              className="group px-6 sm:px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover-lift glow-primary inline-flex items-center justify-center gap-2 text-sm sm:text-base"
             >
               View My Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -151,22 +151,14 @@ export const HeroSection = () => {
               href="/Pitendra_Kumar_Sahoo_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center gap-2 gradient-border"
+              className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base"
             >
               <Eye className="w-4 h-4" />
               View Resume
             </a>
             <a
-              href="/Pitendra_Kumar_Sahoo_CV.pdf"
-              download="Pitendra_Kumar_Sahoo_CV.pdf"
-              className="px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center gap-2"
-            >
-              <Download className="w-4 h-4" />
-              Download CV
-            </a>
-            <a
               href="#contact"
-              className="px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors"
+              className="col-span-2 sm:col-span-1 px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center text-sm sm:text-base"
             >
               Get In Touch
             </a>
@@ -200,7 +192,7 @@ export const HeroSection = () => {
               <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </motion.a>
             <motion.a
-              href="mailto:contact@pitendra.dev"
+              href="mailto:sahoopitendrakumar@gmail.com"
               className="p-3 rounded-xl glass hover:bg-primary/10 transition-all group"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
