@@ -25,8 +25,8 @@ export const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "contact@pitendra.dev",
-      href: "mailto:contact@pitendra.dev",
+      value: "sahoopitendrakumar@gmail.com",
+      href: "mailto:sahoopitendrakumar@gmail.com",
     },
     {
       icon: MapPin,
