@@ -3,6 +3,8 @@ import { Github, Linkedin, Mail, ChevronDown, Rocket, Star, ArrowRight, Eye } fr
 import { FloatingElements } from "./FloatingElements";
 
 export const HeroSection = () => {
+  const resumeUrl = `${import.meta.env.BASE_URL}Pitendra_Kumar_Sahoo_CV.pdf`;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -148,9 +150,16 @@ export const HeroSection = () => {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="/Pitendra_Kumar_Sahoo_CV.pdf"
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                // In some embedded/preview contexts, opening a new tab can be blocked.
+                // Try new tab first; if blocked, fall back to opening in the same tab.
+                e.preventDefault();
+                const win = window.open(resumeUrl, "_blank", "noopener,noreferrer");
+                if (!win) window.location.assign(resumeUrl);
+              }}
               className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base"
             >
               <Eye className="w-4 h-4" />
