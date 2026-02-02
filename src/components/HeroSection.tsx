@@ -151,17 +151,7 @@ export const HeroSection = () => {
               href="/Pitendra_Kumar_Sahoo_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                const link = document.createElement('a');
-                link.href = '/Pitendra_Kumar_Sahoo_CV.pdf';
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-              className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base cursor-pointer"
+              className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base"
             >
               <Eye className="w-4 h-4" />
               View Resume
