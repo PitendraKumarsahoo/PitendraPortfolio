@@ -1,7 +1,19 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Copy, Check } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+
+const email = "sahoopitendrakumar@gmail.com";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    toast.success("Email copied to clipboard!");
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <footer className="py-12 border-t border-border">
@@ -36,11 +48,22 @@ export const Footer = () => {
               <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
             </a>
             <a
-              href="mailto:sahoopitendrakumar@gmail.com"
+              href={`mailto:${email}`}
               className="p-2 rounded-lg hover:bg-secondary transition-colors"
             >
               <Mail className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
             </a>
+            <button
+              onClick={copyEmail}
+              className="p-2 rounded-lg hover:bg-secondary transition-colors"
+              title="Copy email to clipboard"
+            >
+              {copied ? (
+                <Check className="w-5 h-5 text-green-500" />
+              ) : (
+                <Copy className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              )}
+            </button>
           </div>
 
           {/* Made with love */}
