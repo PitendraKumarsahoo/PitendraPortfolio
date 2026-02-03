@@ -1,20 +1,10 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronDown, Rocket, Star, ArrowRight, Eye, Copy, Check } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Rocket, Star, ArrowRight, Eye } from "lucide-react";
 import { FloatingElements } from "./FloatingElements";
-import { useState } from "react";
-import { toast } from "sonner";
 
 export const HeroSection = () => {
   const resumeUrl = `${import.meta.env.BASE_URL}Pitendra_Kumar_Sahoo_CV.pdf`;
-  const email = "sahoopitendrakumar@gmail.com";
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    toast.success("Email copied to clipboard!");
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const mailtoLink = `mailto:sahoopitendrakumar@gmail.com?subject=${encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo")}&body=${encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.")}`;
 
   const openResume = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -208,26 +198,14 @@ export const HeroSection = () => {
               <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </motion.a>
             <motion.a
-              href={`mailto:${email}`}
+              href={mailtoLink}
+              aria-label="Send Email"
               className="p-3 rounded-xl glass hover:bg-primary/10 transition-all group"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </motion.a>
-            <motion.button
-              onClick={copyEmail}
-              className="p-3 rounded-xl glass hover:bg-primary/10 transition-all group"
-              whileHover={{ scale: 1.1, rotate: -5 }}
-              whileTap={{ scale: 0.95 }}
-              title="Copy email to clipboard"
-            >
-              {copied ? (
-                <Check className="w-5 h-5 text-green-500" />
-              ) : (
-                <Copy className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              )}
-            </motion.button>
           </motion.div>
         </div>
       </div>
