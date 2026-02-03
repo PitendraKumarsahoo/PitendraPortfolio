@@ -1,24 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Mail, MapPin, Linkedin, Github, MessageCircle, Copy, Check } from "lucide-react";
+import { Send, Mail, MapPin, Linkedin, Github, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
-const email = "sahoopitendrakumar@gmail.com";
+const mailtoLink = `mailto:sahoopitendrakumar@gmail.com?subject=${encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo")}&body=${encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.")}`;
 
 export const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    toast.success("Email copied to clipboard!");
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,9 +54,8 @@ export const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: email,
-      href: `mailto:${email}`,
-      showCopy: true,
+      value: "sahoopitendrakumar@gmail.com",
+      href: mailtoLink,
     },
     {
       icon: MapPin,
@@ -115,35 +106,22 @@ export const ContactSection = () => {
             <h3 className="font-display text-xl font-semibold mb-6">Get in Touch</h3>
             
             {contactInfo.map((info) => (
-              <div key={info.label} className="flex items-center gap-4 p-4 rounded-xl glass hover-lift group">
-                <a
-                  href={info.href}
-                  target={info.href.startsWith("http") ? "_blank" : undefined}
-                  rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-4 flex-1"
-                >
-                  <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <info.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground text-sm">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
-                  </div>
-                </a>
-                {info.showCopy && (
-                  <button
-                    onClick={copyEmail}
-                    className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
-                    title="Copy email to clipboard"
-                  >
-                    {copied ? (
-                      <Check className="w-4 h-4 text-green-500" />
-                    ) : (
-                      <Copy className="w-4 h-4 text-muted-foreground hover:text-primary" />
-                    )}
-                  </button>
-                )}
-              </div>
+              <a
+                key={info.label}
+                href={info.href}
+                target={info.href.startsWith("http") ? "_blank" : undefined}
+                rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                aria-label={info.label === "Email" ? "Send Email" : undefined}
+                className="flex items-center gap-4 p-4 rounded-xl glass hover-lift group"
+              >
+                <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <info.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">{info.label}</p>
+                  <p className="font-medium">{info.value}</p>
+                </div>
+              </a>
             ))}
 
             <div className="p-6 rounded-2xl glass mt-8">
