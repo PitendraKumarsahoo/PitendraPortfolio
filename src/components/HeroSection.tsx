@@ -195,6 +195,7 @@ export const HeroSection = () => {
             </motion.a>
             <motion.a
               href={mailtoLink}
+              target="_top"
               aria-label="Send Email"
               className="p-3 rounded-xl glass hover:bg-primary/10 transition-all group"
               whileHover={{ scale: 1.1, rotate: 5 }}

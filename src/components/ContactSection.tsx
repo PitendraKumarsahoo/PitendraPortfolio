@@ -109,7 +109,13 @@ export const ContactSection = () => {
               <a
                 key={info.label}
                 href={info.href}
-                target={info.href.startsWith("http") ? "_blank" : undefined}
+                target={
+                  info.href.startsWith("http")
+                    ? "_blank"
+                    : info.href.startsWith("mailto:")
+                      ? "_top"
+                      : undefined
+                }
                 rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={info.label === "Email" ? "Send Email" : undefined}
                 className="flex items-center gap-4 p-4 rounded-xl glass hover-lift group"

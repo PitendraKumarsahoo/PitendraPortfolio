@@ -39,6 +39,7 @@ export const Footer = () => {
             </a>
             <a
               href={mailtoLink}
+              target="_top"
               aria-label="Send Email"
               className="p-2 rounded-lg hover:bg-secondary transition-colors"
             >
