@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+My Portfolio Website
+🌐 Live Website
 
-## Project info
+🔗 https://my-portfolio-snwz.vercel.app/
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+📌 About the Project
 
-## How can I edit this code?
+This is my personal portfolio website built to showcase my skills, projects, and experience as a Computer Science and Engineering student. The website highlights my work in web development, data analysis, and machine learning, and provides an overview of my technical background and interests.
 
-There are several ways of editing your application.
+The project is designed with a modern, responsive UI and focuses on clean design, performance, and user experience.
 
-**Use Lovable**
+🚀 Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Responsive and modern user interface
 
-Changes made via Lovable will be committed automatically to this repo.
+Project showcase section
 
-**Use your preferred IDE**
+Skills and technologies overview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+About Me and contact information
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Fast performance and optimized build
 
-Follow these steps:
+🛠️ Technologies Used
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+Vite – Fast build tool
+
+React – Frontend library
+
+TypeScript – Type-safe JavaScript
+
+Tailwind CSS – Utility-first CSS framework
+
+shadcn/ui – Reusable UI components
+
+⚙️ Getting Started (Run Locally)
+Prerequisites
+
+Node.js
+
+npm
+
+Installation & Setup
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project folder
+cd MyPortfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application will run locally with hot reloading enabled.
 
-**Use GitHub Codespaces**
+📦 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The project is deployed using Vercel for fast and reliable hosting.
 
-## What technologies are used for this project?
+📬 Contact
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+If you’d like to connect or collaborate, feel free to reach out via my portfolio website.
