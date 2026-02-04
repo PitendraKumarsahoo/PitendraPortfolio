@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 import profileImage from "@/assets/pitendra-profile-transparent.png";
 
-const mailtoLink = `mailto:sahoopitendrakumar@gmail.com?subject=${encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo")}&body=${encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.")}`;
+const mailtoLink = "mailto:sahoopitendrakumar@gmail.com?subject=Portfolio%20Contact%20%E2%80%93%20Pitendrakumar%20Sahoo&body=Hello%20Pitendrakumar%2C%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.";
 
 const socialLinks = [
   {
@@ -85,7 +85,7 @@ export const ProfileCard = ({ isInView }: ProfileCardProps) => {
           <motion.a
             key={social.label}
             href={social.href}
-            target={social.href.startsWith("mailto:") ? "_top" : "_blank"}
+            target={social.href.startsWith("mailto:") ? "_self" : "_blank"}
             rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
             aria-label={social.label}
             initial={{ opacity: 0, scale: 0 }}
