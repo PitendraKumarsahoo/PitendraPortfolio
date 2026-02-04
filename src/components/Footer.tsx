@@ -1,6 +1,17 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
-const mailtoLink = `mailto:sahoopitendrakumar@gmail.com?subject=${encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo")}&body=${encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.")}`;
+const handleEmailClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  const subject = encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo");
+  const body = encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.");
+  const mailtoUrl = `mailto:sahoopitendrakumar@gmail.com?subject=${subject}&body=${body}`;
+  
+  // Try to open in new window first, fallback to location change
+  const newWindow = window.open(mailtoUrl, "_blank");
+  if (!newWindow || newWindow.closed) {
+    window.location.href = mailtoUrl;
+  }
+};
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,26 +36,25 @@ export const Footer = () => {
               href="https://linkedin.com/in/pitendra-kumar-sahoo-1379862a8"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg hover:bg-secondary transition-colors"
+              className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300"
             >
-              <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              <Linkedin className="w-5 h-5 text-primary" />
             </a>
             <a
               href="https://github.com/PitendraKumarsahoo"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg hover:bg-secondary transition-colors"
+              className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300"
             >
-              <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              <Github className="w-5 h-5 text-primary" />
             </a>
-            <a
-              href={mailtoLink}
-              target="_top"
+            <button
+              onClick={handleEmailClick}
               aria-label="Send Email"
-              className="p-2 rounded-lg hover:bg-secondary transition-colors"
+              className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300 cursor-pointer"
             >
-              <Mail className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-            </a>
+              <Mail className="w-5 h-5 text-primary" />
+            </button>
           </div>
 
           {/* Made with love */}
