@@ -7,7 +7,7 @@ const projects = [
     title: "ResumeAI",
     description: "AI-powered web application that helps users instantly generate professional, ATS-friendly resumes with multiple templates and A4 PDF export. Built with Next.js & React.",
     tech: ["Next.js", "React", "Tailwind CSS", "AI", "PDF Generation"],
-    liveUrl: "https://lnkd.in/gZzqTQXq",
+    liveUrl: "https://ai-resume-builder-pitendra-smoky.vercel.app/",
     githubUrl: "https://github.com/PitendraKumarsahoo/studio",
     icon: Sparkles,
     featured: true,
@@ -103,11 +103,18 @@ export const ProjectsSection = () => {
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
-                        target="_top"
+                        target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => {
+                          // Let browsers handle modifier clicks (ctrl/cmd/shift) normally.
+                          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+                          // Attempt to open a new tab; if blocked, fall back to same-tab navigation.
+                          const opened = window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+                          if (!opened) {
+                            (window.top ?? window).location.href = project.liveUrl;
+                          }
                           e.preventDefault();
-                          window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
                         }}
                         className="flex items-center gap-2 text-sm text-primary hover:underline cursor-pointer"
                       >
