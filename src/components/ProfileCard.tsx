@@ -74,11 +74,12 @@ export const ProfileCard = ({ isInView }: ProfileCardProps) => {
       </div>
 
       {/* Social Icons - Horizontal Row Below Photo */}
+      {/* Social Icons - Round buttons below photo */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex items-center justify-center gap-4"
+        className="flex items-center justify-center gap-5 mt-2"
       >
         {socialLinks.map((social) => (
           <motion.a
@@ -96,16 +97,16 @@ export const ProfileCard = ({ isInView }: ProfileCardProps) => {
               stiffness: 220,
             }}
             whileHover={{
-              scale: 1.15,
-              boxShadow: "0 10px 28px -8px hsl(var(--primary) / 0.45)",
+              scale: 1.2,
+              boxShadow: "0 8px 25px -5px hsl(var(--primary) / 0.5)",
             }}
-            whileTap={{ scale: 0.95 }}
-            className="relative grid place-items-center w-12 h-12 rounded-full bg-background border-2 border-primary/50 shadow-lg hover:border-primary hover:bg-primary/10 transition-colors group/icon"
+            whileTap={{ scale: 0.9 }}
+            className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary shadow-xl hover:border-accent hover:from-primary/30 hover:to-accent/30 transition-all duration-300 group/icon"
           >
-            <social.icon className="w-5 h-5 text-muted-foreground group-hover/icon:text-primary transition-colors" />
+            <social.icon className="w-6 h-6 text-primary group-hover/icon:text-accent transition-colors" />
 
             {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 text-xs font-medium bg-foreground text-background rounded opacity-0 group-hover/icon:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1.5 text-xs font-semibold bg-primary text-primary-foreground rounded-full opacity-0 group-hover/icon:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg">
               {social.label}
             </span>
           </motion.a>
