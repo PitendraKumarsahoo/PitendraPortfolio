@@ -103,9 +103,13 @@ export const ProjectsSection = () => {
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
-                        target="_blank"
+                        target="_top"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-primary hover:underline"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
+                        }}
+                        className="flex items-center gap-2 text-sm text-primary hover:underline cursor-pointer"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Live Demo
