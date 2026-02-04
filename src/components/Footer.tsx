@@ -1,18 +1,5 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
-const handleEmailClick = (e: React.MouseEvent) => {
-  e.preventDefault();
-  const subject = encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo");
-  const body = encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.");
-  const mailtoUrl = `mailto:sahoopitendrakumar@gmail.com?subject=${subject}&body=${body}`;
-  
-  // Try to open in new window first, fallback to location change
-  const newWindow = window.open(mailtoUrl, "_blank");
-  if (!newWindow || newWindow.closed) {
-    window.location.href = mailtoUrl;
-  }
-};
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -48,13 +35,13 @@ export const Footer = () => {
             >
               <Github className="w-5 h-5 text-primary" />
             </a>
-            <button
-              onClick={handleEmailClick}
+            <a
+              href="mailto:sahoopitendrakumar@gmail.com?subject=Portfolio%20Contact%20%E2%80%93%20Pitendrakumar%20Sahoo&body=Hello%20Pitendrakumar%2C%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you."
               aria-label="Send Email"
-              className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300 cursor-pointer"
+              className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300"
             >
               <Mail className="w-5 h-5 text-primary" />
-            </button>
+            </a>
           </div>
 
           {/* Made with love */}
