@@ -72,8 +72,8 @@ export const ProfileCard = ({ isInView }: ProfileCardProps) => {
             <motion.a
               key={social.label}
               href={social.href}
-              target={social.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              target={social.href.startsWith("mailto:") ? "_top" : "_blank"}
+              rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               aria-label={social.label}
               initial={{ opacity: 0, y: 20, scale: 0 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
