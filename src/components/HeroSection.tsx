@@ -149,15 +149,20 @@ export const HeroSection = () => {
               View My Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href={resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base"
+            <button
+              onClick={() => {
+                const url = `${window.location.origin}/Pitendra_Kumar_Sahoo_CV.pdf`;
+                const newWindow = window.open(url, "_blank");
+                if (!newWindow || newWindow.closed) {
+                  if (window.top) window.top.location.href = url;
+                  else window.location.href = url;
+                }
+              }}
+              className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base cursor-pointer"
             >
               <Eye className="w-4 h-4" />
               View Resume
-            </a>
+            </button>
             <a
               href="#contact"
               className="col-span-2 sm:col-span-1 px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center text-sm sm:text-base"
