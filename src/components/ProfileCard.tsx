@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 import profileImage from "@/assets/pitendra-profile-transparent.png";
 
 const mailtoLink = `mailto:sahoopitendrakumar@gmail.com?subject=${encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo")}&body=${encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.")}`;
@@ -12,16 +12,22 @@ const socialLinks = [
     delay: 0,
   },
   {
+    icon: Instagram,
+    href: "https://www.instagram.com/pitendra21",
+    label: "Instagram",
+    delay: 0.1,
+  },
+  {
     icon: Mail,
     href: mailtoLink,
     label: "Send Email",
-    delay: 0.1,
+    delay: 0.2,
   },
   {
     icon: Github,
     href: "https://github.com/PitendraKumarsahoo",
     label: "GitHub",
-    delay: 0.2,
+    delay: 0.3,
   },
 ];
 
