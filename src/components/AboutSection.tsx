@@ -44,16 +44,18 @@ export const AboutSection = () => {
             className="lg:col-span-2"
           >
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              I am a first-year B.Tech CSE student at GIET University Gunupur, passionate about 
-              developing innovative solutions for real-world problems. I have experience in 
-              <span className="text-foreground font-medium"> web development</span>, 
-              <span className="text-foreground font-medium"> data analysis</span>, and 
-              <span className="text-foreground font-medium"> machine learning</span>.
+              I am a B.Tech Computer Science and Engineering student at GIET University, Gunupur, 
+              passionate about building innovative solutions for real-world problems. I have practical 
+              experience in <span className="text-foreground font-medium">web development</span>, 
+              <span className="text-foreground font-medium">data analysis</span>, and 
+              <span className="text-foreground font-medium">machine learning</span>, and I enjoy 
+              turning ideas into functional applications.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              I have participated in several hackathons and coding competitions, winning awards 
-              for my projects. As a NASA Citizen Scientist, I contribute to real astronomical 
-              research. I am always eager to learn new skills and explore emerging technologies.
+              I have participated in hackathons and coding competitions, earning recognition for 
+              my projects. As a <span className="text-foreground font-medium">NASA Citizen Scientist</span>, 
+              I contribute to real astronomical research, and I am always eager to learn new skills 
+              and explore emerging technologies.
             </p>
 
             {/* Info Cards */}
