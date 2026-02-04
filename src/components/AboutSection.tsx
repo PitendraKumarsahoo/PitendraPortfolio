@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, GraduationCap, Calendar, Award } from "lucide-react";
-import profileImage from "@/assets/pitendra-profile-transparent.png";
+import { ProfileCard } from "./ProfileCard";
 
 export const AboutSection = () => {
   const ref = useRef(null);
@@ -31,22 +31,10 @@ export const AboutSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-12 items-center">
-          {/* Left - Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative group cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
-              <img
-                src={profileImage}
-                alt="Pitendra Kumar Sahoo"
-                className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl object-cover border-4 border-primary/30 shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:border-primary/50"
-              />
-            </div>
-          </motion.div>
+          {/* Left - Profile Image with Social Links */}
+          <div className="flex justify-center lg:justify-end pb-8">
+            <ProfileCard isInView={isInView} />
+          </div>
 
           {/* Middle - Info */}
           <motion.div
