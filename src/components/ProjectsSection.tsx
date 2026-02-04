@@ -101,37 +101,46 @@ export const ProjectsSection = () => {
 
                   <div className="flex items-center gap-4">
                     {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => {
-                          // Let browsers handle modifier clicks (ctrl/cmd/shift) normally.
-                          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
-                          // Attempt to open a new tab; if blocked, fall back to same-tab navigation.
-                          const opened = window.open(project.liveUrl, "_blank", "noopener,noreferrer");
-                          if (!opened) {
-                            (window.top ?? window).location.href = project.liveUrl;
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const url = project.liveUrl;
+                          // Try opening in new tab first
+                          const newWindow = window.open(url, '_blank');
+                          // If blocked (returns null), navigate the top frame
+                          if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                            if (window.top) {
+                              window.top.location.href = url;
+                            } else {
+                              window.location.href = url;
+                            }
                           }
-                          e.preventDefault();
                         }}
-                        className="flex items-center gap-2 text-sm text-primary hover:underline cursor-pointer"
+                        className="flex items-center gap-2 text-sm text-primary hover:underline cursor-pointer bg-transparent border-none p-0"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Live Demo
-                      </a>
+                      </button>
                     )}
                     {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const url = project.githubUrl;
+                          const newWindow = window.open(url, '_blank');
+                          if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                            if (window.top) {
+                              window.top.location.href = url;
+                            } else {
+                              window.location.href = url;
+                            }
+                          }
+                        }}
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors bg-transparent border-none p-0 cursor-pointer"
                       >
                         <Github className="w-4 h-4" />
                         Source Code
-                      </a>
+                      </button>
                     )}
                   </div>
                 </div>
