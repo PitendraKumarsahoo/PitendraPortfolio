@@ -7,7 +7,7 @@ const projects = [
     title: "ResumeAI",
     description: "AI-powered web application that helps users instantly generate professional, ATS-friendly resumes with multiple templates and A4 PDF export. Built with Next.js & React.",
     tech: ["Next.js", "React", "Tailwind CSS", "AI", "PDF Generation"],
-    liveUrl: "https://ai-resume-builder-pitendra-smoky.vercel.app/",
+    liveUrl: "https://studio-pitendra.vercel.app/",
     githubUrl: "https://github.com/PitendraKumarsahoo/studio",
     icon: Sparkles,
     featured: true,
@@ -101,46 +101,26 @@ export const ProjectsSection = () => {
 
                   <div className="flex items-center gap-4">
                     {project.liveUrl && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const url = project.liveUrl;
-                          // Try opening in new tab first
-                          const newWindow = window.open(url, '_blank');
-                          // If blocked (returns null), navigate the top frame
-                          if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                            if (window.top) {
-                              window.top.location.href = url;
-                            } else {
-                              window.location.href = url;
-                            }
-                          }
-                        }}
-                        className="flex items-center gap-2 text-sm text-primary hover:underline cursor-pointer bg-transparent border-none p-0"
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Live Demo
-                      </button>
+                      </a>
                     )}
                     {project.githubUrl && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const url = project.githubUrl;
-                          const newWindow = window.open(url, '_blank');
-                          if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                            if (window.top) {
-                              window.top.location.href = url;
-                            } else {
-                              window.location.href = url;
-                            }
-                          }
-                        }}
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors bg-transparent border-none p-0 cursor-pointer"
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
                         <Github className="w-4 h-4" />
                         Source Code
-                      </button>
+                      </a>
                     )}
                   </div>
                 </div>
