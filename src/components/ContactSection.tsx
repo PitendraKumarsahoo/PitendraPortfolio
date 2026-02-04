@@ -4,7 +4,7 @@ import { Send, Mail, MapPin, Linkedin, Github, MessageCircle } from "lucide-reac
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
-const mailtoLink = "mailto:sahoopitendrakumar@gmail.com?subject=Portfolio%20Contact%20%E2%80%93%20Pitendrakumar%20Sahoo&body=Hello%20Pitendrakumar%2C%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.";
+const mailtoLink = "mailto:sahoopitendrakumar@gmail.com";
 
 export const ContactSection = () => {
   const ref = useRef(null);
