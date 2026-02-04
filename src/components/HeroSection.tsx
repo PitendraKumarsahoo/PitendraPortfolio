@@ -5,12 +5,6 @@ import { FloatingElements } from "./FloatingElements";
 export const HeroSection = () => {
   const resumeUrl = `${import.meta.env.BASE_URL}Pitendra_Kumar_Sahoo_CV.pdf`;
   const mailtoLink = `mailto:sahoopitendrakumar@gmail.com?subject=${encodeURIComponent("Portfolio Contact – Pitendrakumar Sahoo")}&body=${encodeURIComponent("Hello Pitendrakumar,\n\nI visited your portfolio and would like to connect with you.")}`;
-
-  const openResume = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    window.open(resumeUrl, "_blank", "noopener,noreferrer");
-  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -155,13 +149,15 @@ export const HeroSection = () => {
               View My Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
-            <button
-              onClick={openResume}
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center gap-2 gradient-border text-sm sm:text-base"
             >
               <Eye className="w-4 h-4" />
               View Resume
-            </button>
+            </a>
             <a
               href="#contact"
               className="col-span-2 sm:col-span-1 px-6 sm:px-8 py-3 rounded-xl border border-border font-semibold hover:bg-secondary transition-colors inline-flex items-center justify-center text-sm sm:text-base"
